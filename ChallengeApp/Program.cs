@@ -1,31 +1,46 @@
-﻿User user1 = new User("Adam");
-User user2 = new User("Monika");
-User user3 = new User("Zuzia");
-User user4 = new User("Damian");
+﻿using ChallengeApp;
+using System;
 
+Employee employee1 = new Employee("Adam", "Mada", "21");
+Employee employee2 = new Employee("Monika", "Akimon", "32");
+Employee employee3 = new Employee("Zuzia", "Aizuz", "45");
+Employee employee4 = new Employee("Damian", "Niamad", "24");
 
+employee1.AddScore(2);
+employee1.AddScore(5);
+employee1.AddScore(9);
 
-class User
+employee2.AddScore(3);
+employee2.AddScore(7);
+employee2.AddScore(1);
+
+employee3.AddScore(4);
+employee3.AddScore(8);
+employee3.AddScore(1);
+
+employee4.AddScore(5);
+employee4.AddScore(6);
+employee4.AddScore(9);
+
+List<Employee> employees = new List<Employee>()
 {
-    private string login;
-    private string password;
-    private string name;
+    employee1, employee2, employee3, employee4
+};
 
-    // Konstruktor
+int maxResult = -1;
+Employee bestEmployee = null!;
 
-    public User()
+foreach (var employee in employees)
+{
+    if (employee.Result > maxResult)
     {
-        this.login = "BRAK";
-        this.password = "BRAK";
-        this.name = "BRAK";
-    }
-    public User(string login)
-    {
-        this.login = "Adam";
-    }
-    public User(string login, string password)
-    {
-        this.login = "Adam";
-        this.password = "password";
+        maxResult = employee.Result;
+        bestEmployee = employee;
     }
 }
+
+Console.WriteLine($"The best employee is: {bestEmployee.Name} {bestEmployee.Surname}  ");
+Console.WriteLine($"Age: {bestEmployee.Age} ");
+Console.WriteLine($"With total score {maxResult}");
+
+Console.ReadKey();
