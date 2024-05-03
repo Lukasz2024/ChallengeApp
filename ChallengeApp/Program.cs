@@ -16,11 +16,11 @@ employee2.AddScore(1);
 
 employee3.AddScore(4);
 employee3.AddScore(8);
-employee3.AddScore(1);
+employee3.AddScore(8);
 
-employee4.AddScore(5);
-employee4.AddScore(6);
 employee4.AddScore(9);
+employee4.AddScore(6);
+employee4.AddScore(5);
 
 List<Employee> employees = new List<Employee>()
 {
@@ -28,19 +28,18 @@ List<Employee> employees = new List<Employee>()
 };
 
 int maxResult = -1;
-Employee bestEmployee = null!;
+Employee bestEmployees = null!;
 
 foreach (var employee in employees)
 {
-    if (employee.Result > maxResult)
+    if (employee.Result >= maxResult)
     {
         maxResult = employee.Result;
-        bestEmployee = employee;
+        bestEmployees = employee;
     }
 }
-
-Console.WriteLine($"The best employee is: {bestEmployee.Name} {bestEmployee.Surname}  ");
-Console.WriteLine($"Age: {bestEmployee.Age} ");
-Console.WriteLine($"With total score {maxResult}");
+Console.WriteLine($"The best employee is: {bestEmployees.Name} {bestEmployees.Surname}");
+Console.WriteLine($"Age: {bestEmployees.Age}");
+Console.WriteLine($"With total score: {maxResult}");
 
 Console.ReadKey();
