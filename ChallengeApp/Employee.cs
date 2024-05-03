@@ -3,6 +3,12 @@
     public class Employee
     {
         private List<int> score = new List<int>();
+
+        public Employee(string name)
+        {
+            Name = name;
+        }
+
         public Employee(string Name, string Surname, string Age)
 
         {

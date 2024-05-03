@@ -1,18 +1,18 @@
 namespace ChallengeApp.Tests
 {
-    public class Tests
+    public class EmployeeTests
     {
         [Test]
         public void WhenUserCollectTwoScores_ShouldCorrectSum()
         {
             //arrange
-            var user = new Employee("Adam", "Mada", "21");
-            user.AddScore(5);
-            user.AddScore(-6);
-            user.AddScore(9);
+            var employee = new Employee("Adam", "Mada", "21");
+            employee.AddScore(5);
+            employee.AddScore(-6);
+            employee.AddScore(9);
 
             //act
-           var result = user.Result;
+           var result = employee.Result;
 
             //assert
            Assert.AreEqual(8, result);
