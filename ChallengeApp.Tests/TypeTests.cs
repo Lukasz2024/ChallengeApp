@@ -32,6 +32,6 @@
 
         }
 
-        private Employee GetUser(string Name) => new Employee(Name);
+        private Employee GetUser(string Name) => new(Name);
     }
 }
